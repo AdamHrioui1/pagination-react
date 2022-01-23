@@ -8,7 +8,8 @@ function App() {
   let [btns, setBtns] = useState([])
   const [currentPage, setCurrentPage] = useState(0)
   const [currentBtns, setCurrentBtns] = useState(0)
-  const itemsPerPage = 25
+  const [currentBtn, setCurrentBtn] = useState(1)
+  const itemsPerPage = 10
 
   const getBtns = () => {
     btns = []
@@ -21,10 +22,11 @@ function App() {
 
   const setPage = (btn) =>  {
     setCurrentPage(btn - 1)
+    setCurrentBtn(btn)
   }
 
   const prevBtns = () => {
-    if(currentBtns === 0) {
+    if(currentBtns <= 0) {
       return ''
     }
     else {
@@ -33,10 +35,12 @@ function App() {
   }
 
   const nextBtns = () => {
-    if(currentBtns*5 + 5 > btns.length) {
+    if(currentBtns*5 + 5 >= btns.length) {
+      console.log('dsdqqsdqsd');
       return ''
     }
     else {
+      console.log(currentBtns);
       return setCurrentBtns(currentBtns+1)
     }
   }
@@ -47,9 +51,10 @@ function App() {
   
   return (
     <div>
+      <h1>Hello Bro</h1>
       <List data={data} currentPage={currentPage} itemsPerPage={itemsPerPage} />
-      
-      <GetBtns btns={btns} prevBtns={prevBtns} currentBtns={currentBtns} nextBtns={nextBtns} setPage={setPage}/>
+
+      <GetBtns btns={btns} prevBtns={prevBtns} currentBtns={currentBtns} nextBtns={nextBtns} setPage={setPage} currentBtn={currentBtn} />
 
     </div>
   );
