@@ -87,6 +87,10 @@ button.active {
     padding: 0;
     border: none;
   }
+  .btns_conatiner button:hover {
+    color: #fff;
+    background-color: #64d1e4;
+  }
 }
 @media only screen and (max-width: 550px) {
   .btns_conatiner button {
