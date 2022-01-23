@@ -36,11 +36,9 @@ function App() {
 
   const nextBtns = () => {
     if(currentBtns*5 + 5 >= btns.length) {
-      console.log('dsdqqsdqsd');
       return ''
     }
     else {
-      console.log(currentBtns);
       return setCurrentBtns(currentBtns+1)
     }
   }
@@ -52,9 +50,17 @@ function App() {
   return (
     <div>
       <h1>Hello Bro</h1>
-      <List data={data} currentPage={currentPage} itemsPerPage={itemsPerPage} />
+      <List data={data} 
+            currentPage={currentPage} 
+            itemsPerPage={itemsPerPage} />
 
-      <GetBtns btns={btns} prevBtns={prevBtns} currentBtns={currentBtns} nextBtns={nextBtns} setPage={setPage} currentBtn={currentBtn} />
+      <GetBtns 
+            btns={btns} 
+            prevBtns={prevBtns} 
+            currentBtns={currentBtns} 
+            nextBtns={nextBtns} 
+            setPage={setPage} 
+            currentBtn={currentBtn} />
 
     </div>
   );
