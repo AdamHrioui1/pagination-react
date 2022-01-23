@@ -58,7 +58,9 @@ h1 {
   border: none;
   outline: none;
   border-radius: 50%;
+  color: #555;
   
+  font-weight: 700;
   cursor: pointer;
   transition: .4s;
 }
@@ -74,6 +76,9 @@ button.active {
   color: #fff;
   font-weight: 700;
   background-color: #64d1e4;
+}
+.btns_conatiner svg {
+  width: 10px;
 }
 
 @media only screen and (max-width: 800px) {
